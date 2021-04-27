@@ -12,9 +12,12 @@ public class PlayerSystem : SystemBase
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        Entities.ForEach((ref Moveable mov,in Player player) => {
+        Entities
+            .WithAll<Player>()
+            .ForEach((ref Moveable mov) => 
+        {
 
-            mov.direcation = new Vector3(x,0,y);
+            mov.direcation = new Vector3(y,0,-x);
 
         }).Schedule();
     }
