@@ -17,7 +17,7 @@ public class PlayerSystem : SystemBase
             .ForEach((ref Moveable mov) => 
         {
 
-            mov.direcation = new Vector3(y,0,-x);
+            mov.direcation = new Vector3(-y,0,x);
 
         }).Schedule();
     }
